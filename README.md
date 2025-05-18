@@ -1,62 +1,47 @@
-🕉️ Om.ai – Your Gateway to Indian Knowledge Systems 🇮🇳
-Om.ai is a culturally rooted, AI-powered chatbot that brings the vast, intricate world of Indian Knowledge Systems (IKS) to your fingertips. Ask anything – from Ayurveda to Yoga, Vedas to Upanishads, and get clear, insightful responses inspired by ancient Indian wisdom.
+# 🌸 Om.ai – Your AI Guide to Indian Knowledge Systems 🕉️
 
-✨ Features
-🧠 Ask Anything About IKS
-Explore topics like Ayurveda, Yoga, Vedanta, Indian Astronomy, Sanskrit, and more.
+Welcome to **Om.ai**, the intelligent chatbot infused with the timeless wisdom of **Bharatiya Parampara (Indian Traditions)**. From ancient philosophies to Vedic sciences, **ask anything** and let the AI bring you knowledge from the ages — in a way that's fun, insightful, and deeply rooted.
 
-📚 Interactive & Educational
-Learn through engaging answers, explanations, and traditional storytelling formats.
+[🌐 Live Demo »](https://om-ai.onrender.com)
 
-🔄 Instant Answers
-Powered by AI, Om.ai gives you intelligent responses, 24/7.
+---
 
-🎨 Beautiful Interface
-Designed with traditional motifs and modern animations to make learning delightful.
+## ✨ What Can Om.ai Do?
 
-🌿 Example Questions
-What is Ayurveda’s approach to health?
+| 🔍 Query Type               | 🧠 Example                                         |
+|----------------------------|----------------------------------------------------|
+| **Ayurveda**               | “What are the three doshas?”                      |
+| **Yoga & Meditation**      | “What is the purpose of pranayama?”               |
+| **Philosophy (Darshanas)** | “Explain Sankhya vs Vedanta.”                     |
+| **Indian Astronomy**       | “How did ancient Indians measure time?”           |
+| **Sanskrit Literature**    | “Translate a shloka from the Bhagavad Gita.”      |
+| **Traditional Tales**      | “Tell me a Panchatantra story.”                   |
 
-Who wrote the Yoga Sutras?
+🧘 Whether you're a curious student, a lifelong learner, or just spiritually curious, Om.ai has something for everyone!
 
-What are the six darshanas in Indian philosophy?
+---
 
-Explain the concept of Prakriti and Purusha.
+## 💻 Tech Stack
 
-Tell me a Panchatantra story.
+| Layer        | Tech Used                          |
+|--------------|------------------------------------|
+| Frontend     | HTML, CSS, JavaScript              |
+| Fonts        | Google Fonts: Tangerine, Noto Serif|
+| Backend (AI) | Python (OpenAI API or local model) |
+| Hosting      | Render (free hosting platform)     |
 
-💬 Just ask — Om.ai will answer it all, the traditional way with a modern touch.
+---
 
-🔧 Tech Stack
-Frontend: HTML, CSS, JavaScript
+## 🚀 Getting Started
 
-AI Backend: Python + OpenAI GPT (via API or local model)
+> Want to run it locally? Follow these quick steps!
 
-Styling: Google Fonts (Tangerine, Noto Serif), custom animations
-
-Hosting: Render
-
-🚀 Try It Live
-👉 https://om-ai.onrender.com
-
-🛠️ Local Setup
-Clone the repository
-
-bash
-Copy
-Edit
+```bash
+# 1. Clone the repo
 git clone https://github.com/your-username/om-ai.git
-Navigate to the folder
 
-bash
-Copy
-Edit
+# 2. Navigate into it
 cd om-ai
-Open the frontend
-You can simply open index.html in your browser, or run a local server.
 
-(Optional) Run the backend
-Make sure to connect to an OpenAI API or local model (instructions in /backend folder if available).
-
-📬 Contact & Feedback
-
+# 3. Open the project in browser
+Open index.html (double-click or use a local server)
