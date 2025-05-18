@@ -3,111 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Om.ai – Explore Indian Knowledge Systems 🌟</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Fredoka+One&display=swap" rel="stylesheet">
+  <title>IKS Fun Zone 🌟</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Noto+Serif&display=swap" rel="stylesheet">
   <style>
-    /* Body and Background */
+    /* Blurred Background Layer */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -2;
+    }
+
+    /* Optional overlay to darken for better readability */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
     body {
-      font-family: 'Quicksand', sans-serif;
-      text-align: center;
-      padding: 40px;
       margin: 0;
-      background: linear-gradient(45deg, #f9c7d1, #a8e6cf, #ffecb3, #ffe0b2);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s ease infinite;
-      color: #4f4f4f;
+      font-family: 'Noto Serif', serif;
+      overflow-x: hidden;
+    }
+
+    .content {
       position: relative;
-      overflow: hidden;
+      z-index: 1;
+      padding: 40px;
+      text-align: center;
+      color: #fffbe7;
     }
 
-    /* Gradient animation */
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Marquee Styling */
     marquee {
-      font-family: 'Fredoka One', cursive;
-      font-size: 30px;
-      color: #fff;
-      background-color: #ff4081;
-      padding: 10px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin-bottom: 20px;
-    }
-
-    /* Heading Styles */
-    h1 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 70px;
-      color: #fff;
-      margin-bottom: 20px;
-      animation: bounce 1s ease-out infinite;
-    }
-
-    /* Bouncing Animation */
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-20px); }
-      60% { transform: translateY(-10px); }
-    }
-
-    /* Paragraph Styles */
-    p {
-      font-size: 22px;
-      margin-bottom: 30px;
-      color: #ffffff;
-      transition: color 0.3s ease;
-    }
-
-    p:hover {
-      color: #ff4081;
-    }
-
-    /* Strong Text */
-    strong {
+      font-size: 28px;
       font-weight: bold;
-      color: #ffeb3b;
+      color: #fffde7;
+      background-color: rgba(255, 193, 7, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-family: 'Tangerine', cursive;
     }
 
-    /* Button Style */
+    .snowflake, .flower {
+      position: absolute;
+      top: -10px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: snowfall 10s linear infinite;
+    }
+
+    .snowflake {
+      background-color: white;
+      width: 10px;
+      height: 10px;
+    }
+
+    .flower {
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      animation: flowerfall 15s linear infinite;
+    }
+
+    @keyframes snowfall {
+      0% { top: -10px; left: 0%; transform: scale(0.5); }
+      100% { top: 100%; left: 100%; transform: scale(1.2); }
+    }
+
+    @keyframes flowerfall {
+      0% { top: -10px; left: 0%; transform: rotate(0deg) scale(0.8); }
+      100% { top: 100%; left: 100%; transform: rotate(180deg) scale(1.5); }
+    }
+
+    h1 {
+      font-family: 'Tangerine', cursive;
+      font-size: 60px;
+      color: #ffe082;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #f1f8e9;
+      line-height: 1.6;
+    }
+
     button {
       padding: 14px 28px;
-      font-size: 20px;
+      font-size: 18px;
       background-color: #fbc02d;
       color: #3e2723;
       border: 2px solid #ffeb3b;
-      border-radius: 15px;
+      border-radius: 10px;
       cursor: pointer;
       margin: 15px;
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
     button:hover {
-      background-color: #ffeb3b;
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      background-color: #fdd835;
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
-    /* Balloons without animation */
-    .balloon {
-      position: absolute;
-      bottom: 20px;
-      background-color: #ff4081;
-      border-radius: 50%;
-      width: 50px;
-      height: 80px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    .gif-banner img {
+      width: 180px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* Clouds Animation */
+    .nav-buttons {
+      margin-top: 30px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     .clouds {
       position: absolute;
-      top: 10%;
+      top: 20%;
       left: -20%;
       width: 100%;
       height: 20%;
@@ -115,83 +145,72 @@
       background-size: cover;
       animation: moveClouds 30s linear infinite;
       opacity: 0.5;
+      z-index: 0;
     }
 
     @keyframes moveClouds {
       0% { left: -100%; }
       100% { left: 100%; }
     }
-
-    /* Stars without falling animation */
-    .star {
-      position: absolute;
-      background-color: #fff;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      opacity: 0.8;
-      left: 10%;
-    }
-    h1 {
-  transition: color 0.3s ease; /* Smooth color transition */
-}
-
-/* Hover Effect */
-h1:hover {
-  color: #ff4081; /* Change to a fun color, for example, pink */
-}
-/* Paragraph Styles */
-p {
-  font-size: 22px;
-  margin-bottom: 30px;
-  color: #000000; /* Black text color */
-}
-
-/* Strong Text Inside Paragraphs */
-strong {
-  font-weight: bold;
-  color: #000000; /* Black color for the strong text */
-}
-
-/* Smooth background color transition for paragraphs */
-p {
-  transition: background-color 0.3s ease;
-}
-
-p:hover {
-  background-color: #fce4ec; /* Light pink background on hover */
-}
-
   </style>
 </head>
 <body>
 
-  <!-- Marquee for Fun Scrolling Text -->
-  <marquee>🌟 "ज्ञानं ब्रह्महात्मनं शिक्षया च समृद्धिम्" 🎉</marquee>
+  <!-- Background layers -->
+  <div class="background"></div>
+  <div class="overlay"></div>
 
-  <h1>🎉 Welcome to Om.ai 🎉 </h1>
-  <h1>🌸Discover Ancient Knowledge! 🌸</h1>
+  <!-- Content Layer -->
+  <div class="content">
 
-  <p>Welcome to <strong>Om.ai</strong>, an exciting world of ancient Indian traditions! Explore amazing stories, wisdom, and secrets that have been passed down for generations.</p>
+    <!-- Marquee Sanskrit Tagline -->
+    <marquee>🌼 सत्यम् शिवम् सुन्दरम् 🌼 – Truth, Auspiciousness, Beauty</marquee>
 
-  <p>At Om.ai, you'll learn about <strong>philosophy</strong>, <strong>yoga</strong>, and more! Our fun, interactive platform will help you understand and enjoy ancient teachings in a fun and creative way.</p>
+    <!-- Snowflakes -->
+    <div class="snowflake" style="left: 10%;"></div>
+    <div class="snowflake" style="left: 25%;"></div>
+    <div class="snowflake" style="left: 40%;"></div>
+    <div class="snowflake" style="left: 60%;"></div>
+    <div class="snowflake" style="left: 80%;"></div>
 
-  <p>Ready to start your adventure? Let's explore the ancient world together! 🌟✨</p>
+    <!-- Flowers -->
+    <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png'); left: 5%;"></div>
+    <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png'); left: 20%;"></div>
+    <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png'); left: 40%;"></div>
 
-  <!-- Navigation Buttons -->
-  <div class="nav-buttons">
-    <a href="/content_generation">
-      <button>📚 Learn New Things!</button>
-    </a>
-    <a href="/story_generation">
-      <button>🎧 Listen to Fun Tales!</button>
-    </a>
+    <!-- Clouds -->
+    <div class="clouds"></div>
+
+    <!-- GIF Banner -->
+    <div class="gif-banner">
+      <img src="https://media.giphy.com/media/3ohc1292T9nYV2OdoU/giphy.gif" alt="Traditional Indian GIF" />
+    </div>
+
+    <!-- Titles & Content -->
+    <h1>🎉 Welcome to Om.ai 🎉 </h1>
+    <h1>🌸 Discover Ancient Knowledge! 🌸</h1>
+
+    <p>
+      Dive into the magical world of <strong>Indian Knowledge Systems</strong> (IKS), where ancient wisdom meets interactive fun!
+      From the healing power of Ayurveda to the philosophies of the Upanishads, we bring timeless insights to life through engaging content and storytelling.
+    </p>
+    <p>
+      Whether you're curious about the science of yoga, the rhythm of Vedic chants, or the tales from the Panchatantra, there's something here for every young seeker and curious soul.
+    </p>
+    <p>
+      Explore India's legacy of <strong>truth (सत्य)</strong>, <strong>auspiciousness (शिव)</strong>, and <strong>beauty (सुन्दर)</strong> — and rediscover how they are still relevant and fun to learn today!
+    </p>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <a href="/content_generation">
+        <button>📚 Learn Something </button>
+      </a>
+      <a href="/story_generation">
+        <button>🧚‍♀️ create a Traditional Tale</button>
+      </a>
+    </div>
   </div>
-
-
-
-  <!-- Clouds Layer -->
-  <div class="clouds"></div>
 
 </body>
 </html>
