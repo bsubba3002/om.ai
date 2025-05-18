@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Story Generator 🌟</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to right, #ffe0b2, #fff8e1);
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff6f00;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #5d4037;
+        }
+
+        label {
+            font-size: 18px;
+            color: #e65100;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"] {
+            padding: 12px;
+            font-size: 18px;
+            width: 250px;
+            border-radius: 12px;
+            border: 2px solid #ff9800;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 14px 30px;
+            font-size: 18px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        .story-box {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #fffde7;
+            border: 3px dashed #ffcc80;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .animated-gif {
+            width: 150px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        #storyContent {
+            font-size: 20px;
+            color: #4e342e;
+            white-space: pre-line;
+            line-height: 1.6;
+            text-align: left;
+            margin-top: 20px;
+            min-height: 150px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typewriter animation */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            animation: typing 4s steps(60, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🌈 Magical Story Time!</h1>
+    <p>Let’s create a fun story about a magical topic for your little hero! 🧙‍♂️</p>
+
+    <label for="topic">✨ Topic:</label>
+    <input type="text" id="topic" placeholder="e.g., Ayurveda">
+
+    <label for="child_name">👦 Child's Name:</label>
+    <input type="text" id="child_name" placeholder="e.g., Aarav">
+
+    <br>
+    <button onclick="generateStory()">Generate Story</button>
+
+    <div id="generatedStory" class="story-box" style="display: none;">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjc1cG9tcnhkcDJ5aDVmMXQyNWN5N2Y3ZTV5ZWxoemFkdmM0ZGRhNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/GV3pUekALV8uLCOkzs/giphy.gif" alt="Magic" class="animated-gif">
+
+        <h2 style="color:#ff9800;">🌟 Your Magical Story</h2>
+
+        <div id="storyContent" class="typewriter"></div>
+
+        <div class="image-container">
+            <img id="storyImage" src="" alt="Story Image">
+        </div>
+    </div>
+
+    <script>
+        async function generateStory() {
+            const topic = document.getElementById('topic').value.trim();
+            const childName = document.getElementById('child_name').value.trim();
+
+            if (!topic || !childName) {
+                alert("Please enter both a topic and a child's name.");
+                return;
+            }
+
+            // Show loading message
+            const storyBox = document.getElementById('generatedStory');
+            const storyContent = document.getElementById('storyContent');
+            storyContent.innerHTML = "🪄 Creating your magical story...";
+            storyBox.style.display = "block";
+
+            try {
+                const response = await fetch('/generate_story', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ topic, child_name: childName })
+                });
+
+                const data = await response.json();
+                if (data.story) {
+                    animateTyping(data.story);
+                    document.getElementById('storyImage').src = data.image_url || "https://via.placeholder.com/300";
+                } else {
+                    storyContent.innerHTML = "Oops! Something went wrong. Please try again.";
+                }
+            } catch (error) {
+                storyContent.innerHTML = "Error fetching story. Please try later.";
+            }
+        }
+
+        // Typing effect
+        function animateTyping(text) {
+            const storyContent = document.getElementById('storyContent');
+            storyContent.classList.remove("typewriter");
+            storyContent.innerHTML = '';
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    storyContent.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, 20);
+                }
+            }
+            type();
+        }
+    </script>
+
+</body>
+</html>
