@@ -1,237 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn with IKS ✨</title>
-    <style>
-        body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
-            text-align: center;
-            padding: 30px;
-            margin: 0;
-            background: linear-gradient(to bottom right, #ffe0f0, #d0f4ff); /* Static gradient */
-            color: #333;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn with IKS ✨</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+      background: linear-gradient(to bottom right, #ffe0f0, #d0f4ff);
+      color: #333;
+      overflow-y: auto; /* ✅ Enables vertical scrolling */
+    }
 
-        h1 {
-            color: #ff4081;
-            font-weight: bold;
-            margin-bottom: 10px;
-            animation: bounce 2s infinite, shake 0.5s ease-in-out infinite;
-            display: inline-block;
-        }
+    h1 {
+      color: #ff4081;
+      font-weight: bold;
+      margin-bottom: 10px;
+      animation: bounce 2s infinite, shake 0.5s ease-in-out infinite;
+      display: inline-block;
+    }
 
-        /* Bounce Animation */
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
 
-        /* Shake Effect */
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            50% { transform: translateX(10px); }
-            75% { transform: translateX(-10px); }
-            100% { transform: translateX(0); }
-        }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      50% { transform: translateX(10px); }
+      75% { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
 
-        .gif-header img {
-            width: 180px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            animation: sparkle 1s infinite alternate;
-        }
+    .gif-header img {
+      width: 180px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      animation: sparkle 1s infinite alternate;
+    }
 
-        /* Sparkle Effect */
-        @keyframes sparkle {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(1.1); opacity: 0.7; }
-        }
+    @keyframes sparkle {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.1); opacity: 0.7; }
+    }
 
-        input[type="text"] {
-            padding: 10px;
-            font-size: 18px;
-            margin: 10px;
-            border: 2px solid #ff80ab;
-            border-radius: 8px;
-            width: 260px;
-            transition: all 0.3s ease;
-        }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      border: 2px solid #ff80ab;
+      border-radius: 8px;
+      width: 260px;
+      transition: all 0.3s ease;
+    }
 
-        input[type="text"]:focus {
-            border-color: #ff4081;
-            outline: none;
-            box-shadow: 0 0 10px rgba(255, 64, 129, 0.6);
-        }
+    input[type="text"]:focus {
+      border-color: #ff4081;
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 64, 129, 0.6);
+    }
 
-        button {
-            padding: 10px 25px;
-            font-size: 18px;
-            background-color: #ff80ab;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    button {
+      padding: 10px 25px;
+      font-size: 18px;
+      background-color: #ff80ab;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        button:hover {
-            background-color: #ec407a;
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
+    button:hover {
+      background-color: #ec407a;
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        .content-section {
-            background-color: rgba(255, 248, 240, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: left;
-            animation: fadeIn 1s ease-out;
-        }
+    .content-section {
+      background-color: rgba(255, 248, 240, 0.9);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+      animation: fadeIn 1s ease-out;
+    }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
-        .content-section h3 {
-            color: #3f51b5;
-            margin-top: 10px;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
+    .content-section h3 {
+      color: #3f51b5;
+      margin-top: 10px;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
 
-        /* Glow Effect */
-        @keyframes glow {
-            0% { text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081; }
-            100% { text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081; }
-        }
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081; }
+      100% { text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081; }
+    }
 
-        .content {
-            font-size: 17px;
-            line-height: 1.6;
-        }
+    .content {
+      font-size: 17px;
+      line-height: 1.6;
+    }
 
-        #generatedContent {
-            margin-top: 30px;
-        }
+    #generatedContent {
+      margin-top: 30px;
+    }
 
-        /* Confetti Animation */
-        .confetti {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 10px;
-            height: 10px;
-            background-color: #ff4081;
-            border-radius: 50%;
-            animation: confettiFall 2s infinite;
-        }
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      border-radius: 50%;
+      animation: confettiFall 2s infinite;
+    }
 
-        @keyframes confettiFall {
-            0% { top: -10px; opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-        }
-
-    </style>
+    @keyframes confettiFall {
+      0% { top: -10px; opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="gif-header">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG1nMGZvdGU5b2R5MGFpODdrOWpmOG5mb3h3M2VydDZsY3owMWoyNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1g3A0gpaidxWcL9Mfo/giphy.gif" alt="Sparkle Animation">
+  <div class="gif-header">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdG1nMGZvdGU5b2R5MGFpODdrOWpmOG5mb3h3M2VydDZsY3owMWoyNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1g3A0gpaidxWcL9Mfo/giphy.gif" alt="Sparkle Animation">
+  </div>
+
+  <h1>✨ Learn Something Amazing! ✨</h1>
+  <p>Type a topic from the Indian Knowledge System to explore and learn about it.</p>
+
+  <input type="text" id="topic" placeholder="e.g., Yoga, Ayurveda, Vedas" />
+  <br>
+  <button onclick="generateContent()">Show Me the Knowledge!</button>
+
+  <div id="generatedContent" style="display: none;">
+    <h2>🧠 Topic: <span id="topicTitle"></span></h2>
+
+    <div class="content-section">
+      <h3>🌟 Introduction</h3>
+      <div class="content" id="introduction"></div>
     </div>
 
-    <h1>✨ Learn Something Amazing! ✨</h1>
-    <p>Type a topic from the Indian Knowledge System to explore and learn about it.</p>
-
-    <input type="text" id="topic" placeholder="e.g., Yoga, Ayurveda, Vedas" />
-    <br>
-    <button onclick="generateContent()">Show Me the Knowledge!</button>
-
-    <!-- Display Area -->
-    <div id="generatedContent" style="display: none;">
-        <h2>🧠 Topic: <span id="topicTitle"></span></h2>
-
-        <div class="content-section">
-            <h3>🌟 Introduction</h3>
-            <div class="content" id="introduction"></div>
-        </div>
-
-        <div class="content-section">
-            <h3>📜 History</h3>
-            <div class="content" id="history"></div>
-        </div>
-
-        <div class="content-section">
-            <h3>🔍 Key Principles</h3>
-            <div class="content" id="keyPrinciples"></div>
-        </div>
-
-        <div class="content-section">
-            <h3>🎯 Conclusion</h3>
-            <div class="content" id="conclusion"></div>
-        </div>
-
-        <div class="content-section">
-            <h3>📝 Summary</h3>
-            <div class="content" id="summary"></div>
-        </div>
+    <div class="content-section">
+      <h3>📜 History</h3>
+      <div class="content" id="history"></div>
     </div>
 
-    <script>
-        // Generate content function
-        async function generateContent() {
-            const topic = document.getElementById('topic').value.trim();
+    <div class="content-section">
+      <h3>🔍 Key Principles</h3>
+      <div class="content" id="keyPrinciples"></div>
+    </div>
 
-            if (!topic) {
-                alert("Oops! Please enter a topic to explore.");
-                return;
-            }
+    <div class="content-section">
+      <h3>🎯 Conclusion</h3>
+      <div class="content" id="conclusion"></div>
+    </div>
 
-            document.getElementById('topicTitle').textContent = topic;
+    <div class="content-section">
+      <h3>📝 Summary</h3>
+      <div class="content" id="summary"></div>
+    </div>
+  </div>
 
-            // Add confetti effect on button click
-            for (let i = 0; i < 100; i++) {
-                let confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = `${Math.random() * 100}%`;
-                confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                document.body.appendChild(confetti);
-            }
+  <script>
+    async function generateContent() {
+      const topic = document.getElementById('topic').value.trim();
 
-            try {
-                const response = await fetch('/generate_content', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ topic })
-                });
+      if (!topic) {
+        alert("Oops! Please enter a topic to explore.");
+        return;
+      }
 
-                const data = await response.json();
-                if (data.content) {
-                    const content = data.content;
-                    document.getElementById('introduction').innerHTML = content.introduction || 'Coming soon...';
-                    document.getElementById('history').innerHTML = content.history || 'Coming soon...';
-                    document.getElementById('keyPrinciples').innerHTML = content.keyPrinciples || 'Coming soon...';
-                    document.getElementById('conclusion').innerHTML = content.conclusion || 'Coming soon...';
-                    document.getElementById('summary').innerHTML = content.summary || 'Coming soon...';
-                    document.getElementById('generatedContent').style.display = 'block';
-                } else {
-                    alert("Hmm... something went wrong: " + data.error);
-                }
-            } catch (error) {
-                alert("Oh no! Error generating content: " + error.message);
-            }
+      document.getElementById('topicTitle').textContent = topic;
+
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        document.body.appendChild(confetti);
+      }
+
+      try {
+        const response = await fetch('/generate_content', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic })
+        });
+
+        const data = await response.json();
+        if (data.content) {
+          const content = data.content;
+          document.getElementById('introduction').innerHTML = content.introduction || 'Coming soon...';
+          document.getElementById('history').innerHTML = content.history || 'Coming soon...';
+          document.getElementById('keyPrinciples').innerHTML = content.keyPrinciples || 'Coming soon...';
+          document.getElementById('conclusion').innerHTML = content.conclusion || 'Coming soon...';
+          document.getElementById('summary').innerHTML = content.summary || 'Coming soon...';
+          document.getElementById('generatedContent').style.display = 'block';
+        } else {
+          alert("Hmm... something went wrong: " + data.error);
         }
-    </script>
+      } catch (error) {
+        alert("Oh no! Error generating content: " + error.message);
+      }
+    }
+  </script>
 
 </body>
 </html>
