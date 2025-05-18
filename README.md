@@ -1,53 +1,62 @@
-# Om.ai – Explore Ancient Indian Knowledge 🌸🕉️
+🕉️ Om.ai – Your Gateway to Indian Knowledge Systems 🇮🇳
+Om.ai is a culturally rooted, AI-powered chatbot that brings the vast, intricate world of Indian Knowledge Systems (IKS) to your fingertips. Ask anything – from Ayurveda to Yoga, Vedas to Upanishads, and get clear, insightful responses inspired by ancient Indian wisdom.
 
-**Om.ai** is a platform dedicated to bringing the wisdom of ancient Indian traditions into the digital age. Explore the teachings of **philosophy**, **yoga**, **Ayurveda**, and more in an interactive and engaging way.
+✨ Features
+🧠 Ask Anything About IKS
+Explore topics like Ayurveda, Yoga, Vedanta, Indian Astronomy, Sanskrit, and more.
 
-## Features ✨
+📚 Interactive & Educational
+Learn through engaging answers, explanations, and traditional storytelling formats.
 
-- **Explore Knowledge**: 📚 Learn about ancient Indian philosophies, spirituality, and traditions.
-- **Interactive Content**: 🎮 Engage with fun, interactive elements that make learning enjoyable.
-- **Yoga & Ayurveda**: 🧘‍♀️ Discover the practices of yoga and Ayurveda for holistic well-being.
-- **Traditional Stories**: 📖 Read or listen to stories passed down through generations.
+🔄 Instant Answers
+Powered by AI, Om.ai gives you intelligent responses, 24/7.
 
-## Tech Stack 💻
+🎨 Beautiful Interface
+Designed with traditional motifs and modern animations to make learning delightful.
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Fonts**: Google Fonts (Tangerine, Noto Serif)
-- **Animations**: CSS for smooth animations and effects
+🌿 Example Questions
+What is Ayurveda’s approach to health?
 
-## Installation 🛠️
+Who wrote the Yoga Sutras?
 
-To set up the project locally:
+What are the six darshanas in Indian philosophy?
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-username/om-ai.git
-    ```
+Explain the concept of Prakriti and Purusha.
 
-2. Navigate into the project folder:
-    ```bash
-    cd om-ai
-    ```
+Tell me a Panchatantra story.
 
-3. Open `index.html` in your browser to view the site.
+💬 Just ask — Om.ai will answer it all, the traditional way with a modern touch.
 
-## Usage 🚀
+🔧 Tech Stack
+Frontend: HTML, CSS, JavaScript
 
-- Explore content on the homepage. 🌍
-- Learn about various aspects of Indian traditions. 🕉️
-- Enjoy interactive elements and fun animations. ✨
+AI Backend: Python + OpenAI GPT (via API or local model)
 
-## License 📜
+Styling: Google Fonts (Tangerine, Noto Serif), custom animations
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Hosting: Render
 
-## Contact 📬
+🚀 Try It Live
+👉 https://om-ai.onrender.com
 
-For questions or feedback, reach us at:  
+🛠️ Local Setup
+Clone the repository
 
-[![Email](https://img.shields.io/badge/Email-balasubrahmanya3002@gmail.com-c14438?style=flat&logo=gmail&logoColor=white)](mailto:balasubrahmanya3002@gmail.com)  
-[![Portfolio](https://img.shields.io/badge/Portfolio-bsubba3002.github.io-blue?style=flat&logo=github)](https://bsubba3002.github.io/subrahmanya__-/)  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Bala_Subrahmanya-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bala-subrahmanya-413221257)  
-[![Phone](https://img.shields.io/badge/Phone-%2B91_70190_79848-4CAF50?style=flat&logo=whatsapp&logoColor=white)](tel:+917019079848)  
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Chat-green?style=flat&logo=whatsapp&logoColor=white)](https://wa.me/917019079848)  
-[![Instagram](https://img.shields.io/badge/Instagram-_2003.subrahmanya_-E1306C?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/_2003.subrahmanya_/)
+bash
+Copy
+Edit
+git clone https://github.com/your-username/om-ai.git
+Navigate to the folder
+
+bash
+Copy
+Edit
+cd om-ai
+Open the frontend
+You can simply open index.html in your browser, or run a local server.
+
+(Optional) Run the backend
+Make sure to connect to an OpenAI API or local model (instructions in /backend folder if available).
+
+📬 Contact & Feedback
+
