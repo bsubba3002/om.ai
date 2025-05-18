@@ -3,124 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IKS Fun Zone 🌟</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&family=Noto+Serif&display=swap" rel="stylesheet">
+  <title>Om.ai – Explore Indian Knowledge Systems 🌟</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
-    /* Background Image with Overlay */
+    /* Body and Background */
     body {
-      font-family: 'Noto Serif', serif;
+      font-family: 'Quicksand', sans-serif;
       text-align: center;
       padding: 40px;
       margin: 0;
-      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1740&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fffbe7;
+      background: linear-gradient(45deg, #f9c7d1, #a8e6cf, #ffecb3, #ffe0b2);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      color: #4f4f4f;
       position: relative;
       overflow: hidden;
     }
 
-    /* Snowflakes Animation */
-    .snowflake {
-      position: absolute;
-      top: -10px;
-      background-color: white;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      opacity: 0.8;
-      animation: snowfall 10s linear infinite;
+    /* Gradient animation */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    @keyframes snowfall {
-      0% {
-        top: -10px;
-        left: 0%;
-        transform: scale(0.5);
-      }
-      100% {
-        top: 100%;
-        left: 100%;
-        transform: scale(1.2);
-      }
+    /* Marquee Styling */
+    marquee {
+      font-family: 'Fredoka One', cursive;
+      font-size: 30px;
+      color: #fff;
+      background-color: #ff4081;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
     }
 
-    /* Flowers Animation */
-    .flower {
-      position: absolute;
-      top: -10px;
-      animation: flowerfall 15s linear infinite;
-      opacity: 0.9;
-    }
-
-    @keyframes flowerfall {
-      0% {
-        top: -10px;
-        left: 0%;
-        transform: rotate(0deg) scale(0.8);
-      }
-      100% {
-        top: 100%;
-        left: 100%;
-        transform: rotate(180deg) scale(1.5);
-      }
-    }
-
-    /* Cloud and other effects */
+    /* Heading Styles */
     h1 {
-      font-family: 'Tangerine', cursive;
-      font-size: 60px;
-      color: #ffe082;
-      animation: popin 1.5s ease-out;
-      margin-bottom: 10px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 70px;
+      color: #fff;
+      margin-bottom: 20px;
+      animation: bounce 1s ease-out infinite;
     }
 
+    /* Bouncing Animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+
+    /* Paragraph Styles */
     p {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 30px;
-      color: #f1f8e9;
+      color: #ffffff;
+      transition: color 0.3s ease;
     }
 
-    /* Crazy button hover effects */
+    p:hover {
+      color: #ff4081;
+    }
+
+    /* Strong Text */
+    strong {
+      font-weight: bold;
+      color: #ffeb3b;
+    }
+
+    /* Button Style */
     button {
       padding: 14px 28px;
-      font-size: 18px;
+      font-size: 20px;
       background-color: #fbc02d;
       color: #3e2723;
       border: 2px solid #ffeb3b;
-      border-radius: 10px;
+      border-radius: 15px;
       cursor: pointer;
       margin: 15px;
       transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     button:hover {
-      background-color: #fdd835;
-      transform: scale(1.1) rotate(10deg);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      background-color: #ffeb3b;
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
-    .gif-banner img {
-      width: 180px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    /* Balloons without animation */
+    .balloon {
+      position: absolute;
+      bottom: 20px;
+      background-color: #ff4081;
+      border-radius: 50%;
+      width: 50px;
+      height: 80px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .nav-buttons {
-      margin-top: 30px;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Clouds Layer */
+    /* Clouds Animation */
     .clouds {
       position: absolute;
-      top: 20%;
+      top: 10%;
       left: -20%;
       width: 100%;
       height: 20%;
@@ -135,149 +122,76 @@
       100% { left: 100%; }
     }
 
-    /* Snowflakes falling from random positions */
-    .snowflake:nth-child(1) {
+    /* Stars without falling animation */
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      opacity: 0.8;
       left: 10%;
-      animation-duration: 15s;
-      animation-delay: 0s;
     }
+    h1 {
+  transition: color 0.3s ease; /* Smooth color transition */
+}
 
-    .snowflake:nth-child(2) {
-      left: 20%;
-      animation-duration: 13s;
-      animation-delay: 3s;
-    }
+/* Hover Effect */
+h1:hover {
+  color: #ff4081; /* Change to a fun color, for example, pink */
+}
+/* Paragraph Styles */
+p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #000000; /* Black text color */
+}
 
-    .snowflake:nth-child(3) {
-      left: 30%;
-      animation-duration: 12s;
-      animation-delay: 2s;
-    }
+/* Strong Text Inside Paragraphs */
+strong {
+  font-weight: bold;
+  color: #000000; /* Black color for the strong text */
+}
 
-    .snowflake:nth-child(4) {
-      left: 50%;
-      animation-duration: 18s;
-      animation-delay: 1s;
-    }
+/* Smooth background color transition for paragraphs */
+p {
+  transition: background-color 0.3s ease;
+}
 
-    .snowflake:nth-child(5) {
-      left: 70%;
-      animation-duration: 20s;
-      animation-delay: 5s;
-    }
+p:hover {
+  background-color: #fce4ec; /* Light pink background on hover */
+}
 
-    /* Flowers falling from random positions */
-    .flower:nth-child(1) {
-      left: 5%;
-      animation-duration: 20s;
-      animation-delay: 0s;
-    }
-
-    .flower:nth-child(2) {
-      left: 15%;
-      animation-duration: 18s;
-      animation-delay: 2s;
-    }
-
-    .flower:nth-child(3) {
-      left: 25%;
-      animation-duration: 25s;
-      animation-delay: 4s;
-    }
-
-    .flower:nth-child(4) {
-      left: 35%;
-      animation-duration: 22s;
-      animation-delay: 1s;
-    }
-
-    .flower:nth-child(5) {
-      left: 45%;
-      animation-duration: 27s;
-      animation-delay: 3s;
-    }
-
-    .flower:nth-child(6) {
-      left: 55%;
-      animation-duration: 30s;
-      animation-delay: 5s;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Snowflakes -->
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
+  <!-- Marquee for Fun Scrolling Text -->
+  <marquee>🌟 "ज्ञानं ब्रह्महात्मनं शिक्षया च समृद्धिम्" 🎉</marquee>
 
-  <!-- Flowers -->
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
-  <div class="snowflake"></div>
+  <h1>🎉 Welcome to Om.ai 🎉 </h1>
+  <h1>🌸Discover Ancient Knowledge! 🌸</h1>
 
-  <!-- Flowers -->
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <!-- Flowers -->
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
-  <div class="flower" style="background-image: url('https://img.icons8.com/ios/452/flower.png');"></div>
+  <p>Welcome to <strong>Om.ai</strong>, an exciting world of ancient Indian traditions! Explore amazing stories, wisdom, and secrets that have been passed down for generations.</p>
+
+  <p>At Om.ai, you'll learn about <strong>philosophy</strong>, <strong>yoga</strong>, and more! Our fun, interactive platform will help you understand and enjoy ancient teachings in a fun and creative way.</p>
+
+  <p>Ready to start your adventure? Let's explore the ancient world together! 🌟✨</p>
+
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <a href="/content_generation">
+      <button>📚 Learn New Things!</button>
+    </a>
+    <a href="/story_generation">
+      <button>🎧 Listen to Fun Tales!</button>
+    </a>
+  </div>
+
+
 
   <!-- Clouds Layer -->
   <div class="clouds"></div>
-
-  <div class="gif-banner">
-    <img src="https://media.giphy.com/media/3ohc1292T9nYV2OdoU/giphy.gif" alt="Traditional Indian GIF" />
-  </div>
-
-  <h1>🌺 Welcome to IKS Fun Zone 🌺</h1>
-  <p>Explore the rich tapestry of Indian knowledge, nature, and tradition.</p>
-
-  <div class="nav-buttons">
-    <a href="/content_generation">
-      <button>📚 Learn Something Timeless</button>
-    </a>
-    <a href="/story_generation">
-      <button>🧚‍♀️ Listen to a Traditional Tale</button>
-    </a>
-  </div>
 
 </body>
 </html>
